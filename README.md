@@ -11,3 +11,7 @@ Each rule has a weight (a number between 0 and 1) that shows how important it is
 
 This function attempts to find the optimal weights   by solving a least-squares problem. 
 In other words, we look for the mix of preference rankings that comes as close as possible to explaining the actual choices people made. 
+
+Why don't we stop at p_obs if we know what is the probability of choosing A, B, C? 
+
+p+obs is the raw, empirical probabilities observed from the data. It does not offer insight into why an individual would chose that way. It just tells you the raw percentages of people choosing each option in the sets you observed whether those choices are consistent with rational behavior. The DC-RUM model takes those observed probabilities and tries to explain them with a fixed preference ranking. The solve_rum_projection() function assign weights to those rankings. (e.g. 40% prefer B > A > C, 35% prefer C > A > B, etc.).
